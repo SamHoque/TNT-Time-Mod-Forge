@@ -56,11 +56,14 @@ public class Main  {
             return;
         }
 
-        if (!onHypixel || mc.theWorld == null || mc.theWorld.getScoreboard() == null) {
-            this.playingBedwars = false;
-        } else {
-            playingBedwars = EnumChatFormatting.getTextWithoutFormattingCodes(mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1).getDisplayName()).contains("BED WARS");
-        }
+        if (!onHypixel || 
+            mc.theWorld == null || 
+            mc.theWorld.getScoreboard() == null || 
+            mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1) == null || 
+            mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1).getDisplayName() == null
+        ) this.playingBedwars = false;
+            
+        else playingBedwars = EnumChatFormatting.getTextWithoutFormattingCodes(mc.theWorld.getScoreboard().getObjectiveInDisplaySlot(1).getDisplayName()).contains("BED WARS");
 
         checkTimer = 0;
     }
