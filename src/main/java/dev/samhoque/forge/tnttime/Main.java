@@ -69,7 +69,7 @@ public class Main  {
     }
 
     public void doRender(RenderTNTPrimed tntRenderer, EntityTNTPrimed tntPrimed, double x, double y, double z, float partialTicks) {
-        int fuseTimer = this.playingBedwars ? tntPrimed.fuse - 28 : tntPrimed.fuse;
+        int fuseTimer = this.playingBedwars ? tntPrimed.fuse - 12 : tntPrimed.fuse;
         double distance = tntPrimed.getDistanceSqToEntity(tntRenderer.getRenderManager().livingPlayer);
         if (fuseTimer < 1 || distance > 4096) return;
 
